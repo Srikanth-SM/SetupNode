@@ -2,10 +2,10 @@
   "name": "javascript-development-environment",
   "version": "1.0.0",
   "scripts": {
-    "prestart": "node buildScripts/startMessage.js",
+    "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check open:src",
     "poststart": "npm run share",
-    "open:src":"node buildScripts/srcServer.js",
+    "open:src":"babel-node buildScripts/srcServer.js",
     "security-check":"nsp check",
     "share":"npm-run-all --parallel open:src local-tunnel",
     "local-tunnel":"lt --port 8999"
